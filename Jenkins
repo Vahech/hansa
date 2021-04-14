@@ -11,7 +11,8 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-    stages ("create docker image") {
+    stages{
+        stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
                 dir ('jenkinsgit') {
@@ -22,4 +23,4 @@ pipeline {
             }
         }
     }
-
+}
