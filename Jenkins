@@ -34,8 +34,6 @@ pipeline {
             steps {
                 echo " ============== start pushing image =================="
                 sh '''
-                docker push vaheguru/html:latest
-                docker stop nord
                 docker run -d -p 15.237.41.230:80 --name nord --rm vaheguru/html:latest
                 '''
             }
